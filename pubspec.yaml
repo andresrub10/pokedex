@@ -1,0 +1,58 @@
+name: Pokedex
+description: Pokedex app for Zipdev
+
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  provider: ^4.3.2+2
+  # Service Locator
+  get_it: ^5.0.0
+  # Firebase
+  firebase_core: ^0.5.0
+  #firebase_crashlytics: ^0.1.4+1
+  firebase_auth: ^0.18.0+1
+  #Authentication
+  google_sign_in: ^4.5.4
+  #Network
+  dio: ^3.0.10
+  #  FontAwesome Icons
+  font_awesome_flutter: ^8.8.1
+  # Text typer animation
+  animated_text_kit: ^2.2.0
+  # Pixeled borders
+  pixel_border: ^1.0.0
+  #  Images
+  cached_network_image: ^2.2.0+1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/lang/en.json
+    - assets/lang/es.json
+    - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: Pokemon
+      fonts:
+        - asset: assets/fonts/pokemon_pixel_font.ttf
+
