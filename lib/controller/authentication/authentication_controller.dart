@@ -17,7 +17,7 @@ class AuthenticationController extends Controller {
 
     if (authResponse.isSuccess()) {
       LoggedUserHelper.setLoggedUser(authResponse.payload);
-      _appNavigator.toPokemonList();
+      _appNavigator.toDashboard();
     } else {
       //Handle Auth error
       return AppResponse.failure(errorCode: ErrorCode.UNKNOWN);

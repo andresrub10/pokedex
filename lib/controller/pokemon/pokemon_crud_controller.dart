@@ -39,9 +39,15 @@ class PokemonCrudController extends CrudController {
   }
 
   @override
-  Future<AppResponse> getById(String toRead) {
-    // TODO: implement getById
-    throw UnimplementedError();
+  Future<AppResponse<Pokemon>> getById(String toRead) async {
+    try {
+      Pokemon response = await _repo.getById(int.parse(toRead));
+      return AppResponse.success(payload: response);
+    } catch (e, stackTrace) {
+      print(e);
+      print(stackTrace);
+      return AppResponse.failure(errorCode: ErrorCode.UNKNOWN);
+    }
   }
 
   @override

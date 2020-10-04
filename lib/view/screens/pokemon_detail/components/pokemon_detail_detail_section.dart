@@ -5,19 +5,34 @@ import 'package:flutter/material.dart';
 class PokemonDetailDetailSectionComponent extends StatelessWidget {
   Pokemon pokemon;
   double width;
+  bool isSeen;
 
-  PokemonDetailDetailSectionComponent({this.pokemon, this.width});
+  PokemonDetailDetailSectionComponent({this.pokemon, this.width, this.isSeen});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width * 0.43,
-      padding: EdgeInsets.only(top: 50, left: 20),
+      padding: EdgeInsets.only(top: 35, left: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Container(
+            width: width * 0.4,
+            child: Text(
+              isSeen ? StringHelper.capitalize(pokemon.name) : "??????",
+              overflow: TextOverflow.clip,
+              style: Theme.of(context)
+                  .textTheme
+                  .display2
+                  .copyWith(fontWeight: FontWeight.normal),
+            ),
+          ),
+          Container(height: 10),
           Text(
-            StringHelper.capitalize(pokemon.name),
+            isSeen
+                ? "HT:       " + pokemon.height.toString() + " cm."
+                : "HT:      ???  cm.",
             style: Theme.of(context)
                 .textTheme
                 .display2
@@ -25,15 +40,9 @@ class PokemonDetailDetailSectionComponent extends StatelessWidget {
           ),
           Container(height: 10),
           Text(
-            "HT:       " + pokemon.height.toString() + " cm.",
-            style: Theme.of(context)
-                .textTheme
-                .display2
-                .copyWith(fontWeight: FontWeight.normal),
-          ),
-          Container(height: 10),
-          Text(
-            "WT:       " + pokemon.weight.toString() + " lbs.",
+            isSeen
+                ? "WT:       " + pokemon.weight.toString() + " lbs"
+                : "WT:      ???  lbs.",
             style: Theme.of(context)
                 .textTheme
                 .display2

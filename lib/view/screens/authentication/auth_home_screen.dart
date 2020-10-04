@@ -29,9 +29,9 @@ class _AuthHomeScreenState extends State<AuthHomeScreen> {
         children: <Widget>[
           Container(
             height: MediaQuery.of(context).size.height * 0.7,
-            child: Container(
-              child: Image.asset(
-                  AppConstants.IMAGES_ASSETS_PATH + "proffessor_oak.png"),
+            child: Image.asset(
+              AppConstants.IMAGES_ASSETS_PATH + "proffessor_oak.png",
+              fit: BoxFit.contain,
             ),
           ),
           Container(

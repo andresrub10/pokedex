@@ -1,16 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pixel_border/pixel_border.dart';
 
 class PrimaryButton extends StatelessWidget {
   final Widget child;
   final Function action;
   final Color color;
+  final Color highlightColor;
   final EdgeInsets padding;
 
   const PrimaryButton(
       {@required this.child,
       this.action,
       this.color,
+      this.highlightColor,
       this.padding = const EdgeInsets.symmetric(vertical: 5)});
 
   @override
@@ -21,8 +24,9 @@ class PrimaryButton extends StatelessWidget {
         padding: padding,
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+        highlightColor: highlightColor,
+        shape:
+            PixelBorder(pixelSize: 3, borderRadius: BorderRadius.circular(12)),
         onPressed: action != null ? action : () {},
         color: color ?? Theme.of(context).buttonColor,
         child: child,

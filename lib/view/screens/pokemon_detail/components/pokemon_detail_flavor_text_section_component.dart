@@ -6,9 +6,10 @@ class PokemonDetailFlavorTextSectionComponent extends StatelessWidget {
   Pokemon pokemon;
   double width;
   double height;
+  bool isSeen;
 
   PokemonDetailFlavorTextSectionComponent(
-      {this.pokemon, this.width, this.height});
+      {this.pokemon, this.width, this.height, this.isSeen});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class PokemonDetailFlavorTextSectionComponent extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
           child: Text(
-            pokemon.flavorText,
+            isSeen ? pokemon.flavorText : "??????",
             style: Theme.of(context).textTheme.display1,
           ),
         ),

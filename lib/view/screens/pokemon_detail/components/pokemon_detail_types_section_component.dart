@@ -7,8 +7,10 @@ class PokemonDetailTypesSectionComponent extends StatelessWidget {
   Pokemon pokemon;
   double width;
   double height;
+  bool isSeen;
 
-  PokemonDetailTypesSectionComponent({this.pokemon, this.width, this.height});
+  PokemonDetailTypesSectionComponent(
+      {this.pokemon, this.width, this.height, this.isSeen});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class PokemonDetailTypesSectionComponent extends StatelessWidget {
     List<Widget> output = List<Widget>();
     for (String actualType in pokemon.types) {
       output.add(Text(
-        StringHelper.capitalize(actualType),
+        isSeen ? StringHelper.capitalize(actualType) : "??????",
         style: Theme.of(context).textTheme.display1,
       ));
     }

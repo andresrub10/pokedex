@@ -1,18 +1,12 @@
-import 'package:Pokedex/view/screens/authentication/auth_home_screen.dart';
-import 'package:Pokedex/view/screens/dashboard/dashboard.dart';
+import 'package:Pokedex/navigators/settings_navigator/settings_routes.dart';
+import 'package:Pokedex/view/screens/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'app_routes.dart';
-
-class AppNavigator {
+class SettingsNavigator {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
-  Future<void> toDashboard() {
-    return _pushRoute(AppRoutes.dashboard, clearStack: true);
-  }
-
-  Future<void> toAuthentication() {
-    return _pushRoute(AppRoutes.authentication, clearStack: true);
+  Future<void> toSettings() {
+    return _pushRoute(SettingsRoutes.settings, clearStack: true);
   }
 
   popScreen() {
@@ -21,11 +15,8 @@ class AppNavigator {
 
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case AppRoutes.dashboard:
-        return MaterialPageRoute(builder: (context) => Dashboard());
-
-      case AppRoutes.authentication:
-        return MaterialPageRoute(builder: (context) => AuthHomeScreen());
+      case SettingsRoutes.settings:
+        return MaterialPageRoute(builder: (context) => SettingsScreen());
     }
     return null;
   }

@@ -35,13 +35,23 @@ class HttpPokemonDao extends HttpDao implements IPokemonDao {
     for (dynamic actualType in actual["types"]) {
       types.add(actualType["type"]["name"]);
     }
+    String mainImageUrl;
+
+    if (actual["sprites"]["other"]["official-artwork"]["front_default"] !=
+        null) {
+      mainImageUrl = actual["sprites"]["other"]["official-artwork"]["front_defa"
+          "ult"];
+    } else {
+      mainImageUrl = actual["sprites"]["front_default"];
+    }
+
     return Pokemon(
         actual["id"],
         actual["name"],
         actual["height"],
         actual["weight"],
-        actual["sprites"]["other"]["official-artwork"]["front_default"],
-        actual["sprites"]["front_shiny"],
+        mainImageUrl,
+        actual["sprites"]["front_default"],
         types,
         await getFlavorText(id));
   }
