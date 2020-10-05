@@ -51,19 +51,19 @@ class PokemonDetailScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      height: parentHeight * 0.25,
+                      height: parentHeight * 0.2,
                       child: PokemonDetailTypesSectionComponent(
                           pokemon: pokemon,
                           width: parentWidth,
-                          height: parentHeight * 0.2,
+                          height: parentHeight * 0.15,
                           isSeen: presenter.isSeen(pokemon)),
                     ),
                     Container(
-                      height: parentHeight * 0.25,
+                      height: parentHeight * 0.3,
                       child: PokemonDetailFlavorTextSectionComponent(
                           pokemon: pokemon,
                           width: parentWidth,
-                          height: parentHeight * 0.2,
+                          height: parentHeight * 0.25,
                           isSeen: presenter.isSeen(pokemon)),
                     ),
                   ],
