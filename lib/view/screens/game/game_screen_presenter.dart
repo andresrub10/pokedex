@@ -51,7 +51,6 @@ class GameScreenPresenter extends ChangeNotifier {
       _engagedPokemon = response.payload;
       _engaging = false;
       _pokedexPresenter.addSeen(_engagedPokemon);
-      notifyListeners();
     } else {
       _idle = true;
     }
@@ -73,8 +72,8 @@ class GameScreenPresenter extends ChangeNotifier {
     //50% probabilities
     _caught = RandomHelper.getRandomInt(10) < 5;
     notifyListeners();
-    await Future.delayed(Duration(seconds: 3));
-    if (_caught) {
+    await Future.delayed(Duration(seconds: 2));
+    if (_caught != null && _caught) {
       _gameNavigator.toPokemonDetail(_engagedPokemon);
       await Future.delayed(Duration(seconds: 1));
       _idle = true;

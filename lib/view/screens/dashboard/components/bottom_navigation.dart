@@ -15,11 +15,11 @@ class BottomNavigation extends StatelessWidget {
       items: [
         _buildItem(
             tabItem: TabItem.POKEDEX,
-            iconData: FontAwesomeIcons.home,
+            iconData: FontAwesomeIcons.book,
             context: context),
         _buildItem(
             tabItem: TabItem.GAME,
-            iconData: FontAwesomeIcons.bookOpen,
+            iconData: FontAwesomeIcons.mapMarkedAlt,
             context: context),
         _buildItem(
             tabItem: TabItem.SETTINGS,
@@ -33,7 +33,10 @@ class BottomNavigation extends StatelessWidget {
   }
 
   BottomNavigationBarItem _buildItem(
-      {TabItem tabItem, IconData iconData, BuildContext context}) {
+      {TabItem tabItem,
+      IconData iconData,
+      BuildContext context,
+      String title}) {
     return BottomNavigationBarItem(
       icon: Icon(
         iconData,

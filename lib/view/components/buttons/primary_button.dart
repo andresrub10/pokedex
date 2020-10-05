@@ -4,20 +4,23 @@ import 'package:pixel_border/pixel_border.dart';
 
 class PrimaryButton extends StatelessWidget {
   final Widget child;
-  final Function action;
+  Function action;
   final Color color;
   final Color highlightColor;
   final EdgeInsets padding;
+  final bool disabled;
 
-  const PrimaryButton(
+  PrimaryButton(
       {@required this.child,
       this.action,
       this.color,
       this.highlightColor,
-      this.padding = const EdgeInsets.symmetric(vertical: 5)});
+      this.padding = const EdgeInsets.symmetric(vertical: 5),
+      this.disabled = false});
 
   @override
   Widget build(BuildContext context) {
+    action = disabled ? null : action;
     return Container(
       width: MediaQuery.of(context).size.width,
       child: FlatButton(

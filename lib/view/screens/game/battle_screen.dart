@@ -87,6 +87,7 @@ class BattleScreen extends StatelessWidget {
         children: [
           Expanded(
             child: PrimaryButton(
+              disabled: presenter.catching,
               action: presenter.catchPokemon,
               child: Text("Catch Pokemon!",
                   style: Theme.of(context).textTheme.display1),
@@ -99,6 +100,7 @@ class BattleScreen extends StatelessWidget {
           ),
           Expanded(
             child: PrimaryButton(
+              disabled: presenter.catching,
               action: presenter.flee,
               child: Text("Flee!", style: Theme.of(context).textTheme.display1),
               color: Theme.of(context).primaryColor,
@@ -114,7 +116,9 @@ class BattleScreen extends StatelessWidget {
     String logText;
 
     if (presenter.catching && presenter.caught == null) {
-      logText = "Good Luck!";
+      logText = "You threw a Pokeball at " +
+          StringHelper.capitalize(presenter.engagedPokemon.name) +
+          "!";
     } else if (presenter.catching && presenter.caught) {
       logText = "You caught " +
           StringHelper.capitalize(presenter.engagedPokemon.name) +
