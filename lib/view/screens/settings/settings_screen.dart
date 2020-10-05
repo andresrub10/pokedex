@@ -38,6 +38,7 @@ class SettingsScreen extends StatelessWidget {
                   highlightColor: Colors.greenAccent,
                   child: Text(
                     "Reset Pokedex to all seen and caught.",
+                    textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.display1,
                   ),
                   action: presenter.allToSeenAndCaught,

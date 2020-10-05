@@ -13,7 +13,7 @@ class PokemonListScreenPresenter extends ChangeNotifier {
   bool _loading = false;
   bool get loading => _loading;
 
-  int _limit = 20;
+  int _limit = 200;
   int get limit => _limit;
   int _offset = 0;
 
@@ -22,8 +22,9 @@ class PokemonListScreenPresenter extends ChangeNotifier {
   Future<void> onViewStarted() async {
     fetchNextPokemon();
     _scrollController.addListener(() async {
-      if (_scrollController.position.pixels ==
-          _scrollController.position.maxScrollExtent) {
+      if (!_loading &&
+          _scrollController.position.pixels ==
+              _scrollController.position.maxScrollExtent) {
         await fetchNextPokemon();
       }
     });
