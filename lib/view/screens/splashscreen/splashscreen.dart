@@ -1,6 +1,6 @@
+import 'package:Pokedex/controller/authentication/authentication_controller.dart';
+import 'package:Pokedex/controller/authentication/firebase/get_current_user_firebase_controller.dart';
 import 'package:Pokedex/misc/constants/app_constants.dart';
-import 'package:Pokedex/misc/service_locator.dart';
-import 'package:Pokedex/navigators/app_navigator/app_navigator.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -16,9 +16,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   loadAppData() async {
     await Future.delayed(Duration(seconds: 3));
-    AppNavigator navigator = locator<AppNavigator>();
+
     await Firebase.initializeApp();
-    navigator.toAuthentication();
+    AuthenticationController authController = new AuthenticationController(
+        GetCurrentUserFirebaseAuthenticationController());
+    authController.process();
   }
 
   @override

@@ -10,9 +10,15 @@ class GetCurrentUserFirebaseAuthenticationController
   Future<AppResponse<User>> process() async {
     FirebaseAuth.User current = firebaseAuth.currentUser;
 
-    //TODO Fetch user on service or repository??
-    //For now just fetching firebase given data
-
-    return AppResponse.success(payload: User());
+    if (current != null) {
+      return AppResponse.success(
+          payload: User(
+              id: current.uid,
+              email: current.email,
+              givenName: current.displayName,
+              imageUrl: current.photoURL));
+    } else {
+      return AppResponse.failure(errorCode: ErrorCode.NO_USER_LOGGED);
+    }
   }
 }

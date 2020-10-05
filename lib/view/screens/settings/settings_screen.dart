@@ -1,3 +1,7 @@
+import 'package:Pokedex/controller/authentication/firebase/sign_out_current_user_firebase_controller.dart';
+import 'package:Pokedex/misc/app_response.dart';
+import 'package:Pokedex/misc/service_locator.dart';
+import 'package:Pokedex/navigators/app_navigator/app_navigator.dart';
 import 'package:Pokedex/view/components/app_bars/main_app_bar.dart';
 import 'package:Pokedex/view/components/buttons/primary_button.dart';
 import 'package:Pokedex/view/screens/dashboard/pokedex_presenter.dart';
@@ -42,13 +46,32 @@ class SettingsScreen extends StatelessWidget {
                   height: 25,
                 ),
                 PrimaryButton(
-                  color: Colors.red,
-                  highlightColor: Colors.redAccent,
+                  color: Colors.grey,
+                  highlightColor: Colors.blueGrey,
                   child: Text(
                     "Restart Pokedex from scratch.",
                     style: Theme.of(context).textTheme.display1,
                   ),
                   action: presenter.fromScratch,
+                ),
+                Container(
+                  height: 25,
+                ),
+                PrimaryButton(
+                  color: Colors.red,
+                  highlightColor: Colors.redAccent,
+                  child: Text(
+                    "Log out.",
+                    style: Theme.of(context).textTheme.display1,
+                  ),
+                  action: () async {
+                    SignOutFirebaseAuthenticationController signOutController =
+                        SignOutFirebaseAuthenticationController();
+                    AppResponse response = await signOutController.process();
+                    if (response.isSuccess()) {
+                      locator<AppNavigator>().toAuthentication();
+                    }
+                  },
                 )
               ],
             ),

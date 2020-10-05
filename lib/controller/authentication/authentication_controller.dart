@@ -19,7 +19,7 @@ class AuthenticationController extends Controller {
       LoggedUserHelper.setLoggedUser(authResponse.payload);
       _appNavigator.toDashboard();
     } else {
-      //Handle Auth error
+      _appNavigator.toAuthentication();
       return AppResponse.failure(errorCode: ErrorCode.UNKNOWN);
     }
   }

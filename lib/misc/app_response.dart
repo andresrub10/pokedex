@@ -1,4 +1,4 @@
-enum ErrorCode { SUCCESS, UNKNOWN }
+enum ErrorCode { UNKNOWN, NO_USER_LOGGED }
 
 class AppResponse<T> {
   ErrorCode errorCode;
