@@ -10,11 +10,11 @@ class AppTheme {
     canvasColor: Colors.black,
     primaryColor: Color.fromRGBO(173, 62, 69, 1),
     textTheme: TextTheme(
-      title: TextStyle(color: Colors.white, fontSize: 35),
-      display1: TextStyle(color: Colors.white, fontSize: 25),
-      display2: TextStyle(
+      subtitle1: TextStyle(color: Colors.white, fontSize: 35),
+      headline1: TextStyle(color: Colors.white, fontSize: 25),
+      headline2: TextStyle(
           color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
-      display4: TextStyle(color: Colors.white, fontSize: 40),
+      headline3: TextStyle(color: Colors.white, fontSize: 40),
     ),
   );
 }

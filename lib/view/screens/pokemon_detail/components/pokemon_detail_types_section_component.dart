@@ -32,7 +32,7 @@ class PokemonDetailTypesSectionComponent extends StatelessWidget {
     for (String actualType in pokemon.types) {
       output.add(Text(
         isSeen ? StringHelper.capitalize(actualType) : "??????",
-        style: Theme.of(context).textTheme.display1,
+        style: Theme.of(context).textTheme.headline1,
       ));
     }
 

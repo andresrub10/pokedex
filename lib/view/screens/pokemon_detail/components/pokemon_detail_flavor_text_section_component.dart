@@ -22,7 +22,7 @@ class PokemonDetailFlavorTextSectionComponent extends StatelessWidget {
           padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
           child: Text(
             isSeen ? pokemon.flavorText : "??????",
-            style: Theme.of(context).textTheme.display1,
+            style: Theme.of(context).textTheme.headline1,
           ),
         ),
       ),

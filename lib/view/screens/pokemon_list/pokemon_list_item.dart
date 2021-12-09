@@ -40,7 +40,7 @@ class PokemonListItem extends StatelessWidget {
                   children: [
                     Text(
                       "No. " + pokemon.number.toString(),
-                      style: Theme.of(context).textTheme.display1,
+                      style: Theme.of(context).textTheme.headline1,
                     ),
                     presenter.isCaught(pokemon)
                         ? Container(
@@ -60,7 +60,7 @@ class PokemonListItem extends StatelessWidget {
                   presenter.isSeen(pokemon)
                       ? StringHelper.capitalize(pokemon.name)
                       : "??????",
-                  style: Theme.of(context).textTheme.display1,
+                  style: Theme.of(context).textTheme.headline1,
                 ),
                 presenter.isSeen(pokemon)
                     ? Container(

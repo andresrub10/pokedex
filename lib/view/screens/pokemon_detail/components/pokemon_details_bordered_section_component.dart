@@ -35,7 +35,7 @@ class PokemonDetailsBorderedSectionComponent extends StatelessWidget {
             title,
             style: Theme.of(context)
                 .textTheme
-                .display1
+                .headline1
                 .copyWith(fontWeight: FontWeight.bold),
           ),
         ),

@@ -33,6 +33,8 @@ dependencies:
   #  Images
   cached_network_image: ^2.2.0+1
 
+  flutter_webrtc: ^0.8.0
+
 
 dev_dependencies:
   flutter_test:

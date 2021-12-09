@@ -26,7 +26,7 @@ class SettingsScreen extends StatelessWidget {
                   highlightColor: Colors.blueAccent,
                   child: Text(
                     "Reset Pokedex to all seen.",
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.headline1,
                   ),
                   action: presenter.allToSeen,
                 ),
@@ -39,7 +39,7 @@ class SettingsScreen extends StatelessWidget {
                   child: Text(
                     "Reset Pokedex to all seen and caught.",
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.headline1,
                   ),
                   action: presenter.allToSeenAndCaught,
                 ),
@@ -51,7 +51,7 @@ class SettingsScreen extends StatelessWidget {
                   highlightColor: Colors.blueGrey,
                   child: Text(
                     "Restart Pokedex from scratch.",
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.headline1,
                   ),
                   action: presenter.fromScratch,
                 ),
@@ -63,7 +63,7 @@ class SettingsScreen extends StatelessWidget {
                   highlightColor: Colors.redAccent,
                   child: Text(
                     "Log out.",
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.headline1,
                   ),
                   action: () async {
                     SignOutFirebaseAuthenticationController signOutController =

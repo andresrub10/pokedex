@@ -8,7 +8,7 @@ class MainAppBar extends StatelessWidget with PreferredSizeWidget {
         backgroundColor: Theme.of(context).primaryColor,
         title: Text(
           LoggedUserHelper.getLoggedUser().givenName + "'s pokedex.",
-          style: Theme.of(context).textTheme.title,
+          style: Theme.of(context).textTheme.subtitle1,
         ));
   }
 

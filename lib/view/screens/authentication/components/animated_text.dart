@@ -16,7 +16,7 @@ class AnimatedText extends StatelessWidget {
         isRepeatingAnimation: false,
         onFinished: onFinished,
         text: texts,
-        textStyle: Theme.of(context).textTheme.title,
+        textStyle: Theme.of(context).textTheme.subtitle1,
         textAlign: TextAlign.center,
         alignment: AlignmentDirectional.center);
   }

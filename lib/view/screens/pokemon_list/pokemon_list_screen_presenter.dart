@@ -13,7 +13,7 @@ class PokemonListScreenPresenter extends ChangeNotifier {
   bool _loading = false;
   bool get loading => _loading;
 
-  int _limit = 200;
+  int _limit = 100;
   int get limit => _limit;
   int _offset = 0;
 

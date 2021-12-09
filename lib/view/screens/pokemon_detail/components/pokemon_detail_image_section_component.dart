@@ -55,7 +55,7 @@ class PokemonDetailImageSectionComponent extends StatelessWidget {
             children: [
               Text(
                 "No. " + pokemon.number.toString(),
-                style: Theme.of(context).textTheme.display2,
+                style: Theme.of(context).textTheme.headline2,
               ),
               isCaught
                   ? Container(

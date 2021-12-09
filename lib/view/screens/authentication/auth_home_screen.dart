@@ -99,7 +99,7 @@ class _AuthHomeScreenState extends State<AuthHomeScreen> {
       //padding: EdgeInsets.symmetric(vertical: 14),
       child: Text(
         buttonAltText,
-        style: Theme.of(context).textTheme.display1.copyWith(color: textColor),
+        style: Theme.of(context).textTheme.headline1.copyWith(color: textColor),
       ),
       color: buttonColor,
     );

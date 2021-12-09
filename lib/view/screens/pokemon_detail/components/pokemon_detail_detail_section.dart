@@ -24,7 +24,7 @@ class PokemonDetailDetailSectionComponent extends StatelessWidget {
               overflow: TextOverflow.clip,
               style: Theme.of(context)
                   .textTheme
-                  .display2
+                  .headline2
                   .copyWith(fontWeight: FontWeight.normal),
             ),
           ),
@@ -35,7 +35,7 @@ class PokemonDetailDetailSectionComponent extends StatelessWidget {
                 : "HT:      ???  cm.",
             style: Theme.of(context)
                 .textTheme
-                .display2
+                .headline2
                 .copyWith(fontWeight: FontWeight.normal),
           ),
           Container(height: 10),
@@ -45,7 +45,7 @@ class PokemonDetailDetailSectionComponent extends StatelessWidget {
                 : "WT:      ???  lbs.",
             style: Theme.of(context)
                 .textTheme
-                .display2
+                .headline2
                 .copyWith(fontWeight: FontWeight.normal),
           ),
         ],

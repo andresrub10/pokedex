@@ -90,7 +90,7 @@ class BattleScreen extends StatelessWidget {
               disabled: presenter.catching,
               action: presenter.catchPokemon,
               child: Text("Catch Pokemon!",
-                  style: Theme.of(context).textTheme.display1),
+                  style: Theme.of(context).textTheme.headline1),
               color: Colors.green,
               highlightColor: Colors.greenAccent,
             ),
@@ -102,7 +102,8 @@ class BattleScreen extends StatelessWidget {
             child: PrimaryButton(
               disabled: presenter.catching,
               action: presenter.flee,
-              child: Text("Flee!", style: Theme.of(context).textTheme.display1),
+              child:
+                  Text("Flee!", style: Theme.of(context).textTheme.headline1),
               color: Theme.of(context).primaryColor,
               highlightColor: Colors.redAccent,
             ),
@@ -140,7 +141,7 @@ class BattleScreen extends StatelessWidget {
           child: Container(
             child: Text(
               logText,
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.headline1,
             ),
           ),
         ),

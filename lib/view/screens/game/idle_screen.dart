@@ -29,7 +29,7 @@ class IdleScreen extends StatelessWidget {
               child: PrimaryButton(
                 child: Text(
                   "Find pokemon!",
-                  style: Theme.of(context).textTheme.display4,
+                  style: Theme.of(context).textTheme.headline4,
                 ),
                 color: Colors.green,
                 highlightColor: Colors.greenAccent,
